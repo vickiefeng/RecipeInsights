@@ -7,6 +7,7 @@ This is a project for DSC 80 at UCSD that analyzes the relationship between reci
 This dataset is a collection of data scrapped from Food.com, combining information on recipes with user ratings and reviews. From this dataset, we can gain insights into the relationship between recipe attributes and the corresponding user-given ratings. From analyzing this dataset, we can gain a better understanding of the length of recipes that tend to receive favorable reviews and answer the question: **How does the cooking time (in minutes) of a recipe relate to its average rating?**
 
 There were a total of 229568 rows and 10 relevant columns in the merged dataframe I created: 
+
 | Column | Description |
 | --- | --- |
 | `name` | Name of recipe |
