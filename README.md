@@ -91,5 +91,8 @@ Both the p-value and the histogram results indicate that we can reject the null 
 
 We can also test the missingness of the `avg_rating` column on presence of olive oil in a recipe. To do this, I created a separate column, `has_olive_oil`, which assigns True and False values to whether a recipe contains olive oil in its `ingredients` information. From there, we can create a conditional distribution by utilizing a pivot table that lists the proportions of recipes that contain or do not contain olive oil and do or do not have an average rating. Using this conditional distribution, we can create a grouped bar chart that displays this information visually. 
 
+<iframe src="assets/fig5.html" width=800 height=600 frameBorder=0></iframe>
 
+We can make note of the fact that the two distributions are extremely similar, regardless of whether a recipe contains olive oil. Again, we can perform a permutation test to determine if there is any significant difference between the distributions. 
 
+For this test, the null hypothesis is: **There is no significant difference in the distribution of average rating for recipes with and without olive oil.** Conversely, the alternative hypothesis is: **There is a significant difference in the distribution of average rating for recipes with and without olive oil.**
