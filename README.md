@@ -61,13 +61,13 @@ The following scatterplot examines the relationship between the number of minute
 ### Interesting Aggregates
 By grouping the data by rating then aggregating by the mean on various columns, it is clear that certain attributes of a recipe have more variance across ratings. For example, the pivot table below shows that as ratings increase, the average number of minutes tends to decrease. This is also the case for calorie count. On the other hand, the number of ingredients is roughly the same across ratings.
 
-|   rating |   minutes |   calories |   n_steps |   n_ingredients |
-|---------:|----------:|-----------:|----------:|----------------:|
-|        1 |   64.9795 |    479.959 |  10.6161  |         8.88805 |
-|        2 |   63.3552 |    446.694 |  10.6366  |         9.20973 |
-|        3 |   59.176  |    422.896 |   9.95046 |         9.17818 |
-|        4 |   53.9407 |    404.05  |   9.5479  |         9.07601 |
-|        5 |   52.106  |    412.834 |   9.93986 |         9.03409 |
+|   rating |   minutes |   calories |   n_ingredients |
+|---------:|----------:|-----------:|----------------:|
+|        1 |   64.9795 |    479.959 |         8.88805 |
+|        2 |   63.3552 |    446.694 |         9.20973 |
+|        3 |   59.176  |    422.896 |         9.17818 |
+|        4 |   53.9407 |    404.05  |         9.07601 |
+|        5 |   52.106  |    412.834 |         9.03409 |
 
 ## Assessment of Missingness
 
@@ -84,5 +84,12 @@ The following histogram shows the distribution of the number of steps by missing
 <iframe src="assets/rating_missingness.html" width=800 height=600 frameBorder=0></iframe>
 
 Using a significance level of 5%, we can calculate the observed test statistic and perform the permutation test 1000 times by shuffling the `rating_missing` column at random to obtain each test statistic. From there, we can calculate the p-value. In doing so, we obtain a p-value of 0.0 and the following distribution: 
+
+<iframe src="assets/fig4.html" width=800 height=600 frameBorder=0></iframe>
+
+Both the p-value and the histogram results indicate that we can reject the null hypothesis at the 0.05 significance level. Thus, we can conclude that the `avg_rating` column does depend on the `n_steps` column. An everyday person may find that the more steps, the more tedious the cooking process, and thus, rate the recipe lower based on the cooking experience. 
+
+We can also test the missingness of the `avg_rating` column on presence of olive oil in a recipe. To do this, I created a separate column, `has_olive_oil`, which assigns True and False values to whether a recipe contains olive oil in its `ingredients` information. From there, we can create a conditional distribution by utilizing a pivot table that lists the proportions of recipes that contain or do not contain olive oil and do or do not have an average rating. Using this conditional distribution, we can create a grouped bar chart that displays this information visually. 
+
 
 
