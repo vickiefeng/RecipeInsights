@@ -41,4 +41,13 @@ The first five rows of the cleaned dataframe is shown below:
 |  4 | 412 broccoli casserole               | 306168 |        40 |         6 | since there are already 411 recipes for broccoli casserole posted to "zaar" ,i decided to call this one  #412 broccoli casserole.i don't think there are any like this one in the database. i based this one on the famous "green bean casserole" from campbell's soup. but i think mine is better since i don't like cream of mushroom soup.submitted to "zaar" on may 28th,2008 | ['frozen broccoli cuts', 'cream of chicken soup', 'sharp cheddar cheese', 'garlic powder', 'ground black pepper', 'salt', 'milk', 'soy sauce', 'french-fried onions']          |               9 |        5 |            5 |      194.8 |
 
 ## Univariate Analysis
+Below is a histogram that displays the distribution of recipe minutes. We can see that it is highly skewed to the left, and the vast majority of recipes are completed in or less than 120 minutes. 
+
 <iframe src="assets/fig1.html" width=800 height=600 frameBorder=0></iframe>
+
+The following histogram shows the probability distribution of the average ratings. We can make note of the fact that the average rating is very high, where nearly 80% of ratings fall in the 4.5 - 5 range. 
+
+<iframe src="assets/fig2.html" width=800 height=600 frameBorder=0></iframe>
+
+## Bivariate Analysis
+
