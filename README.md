@@ -52,11 +52,13 @@ Below is a histogram that displays the distribution of recipe minutes. We can se
 We can further explore how the number of minutes correlates with the average ratings with our bivariate analysis.
 
 ## Bivariate Analysis
-The following scatterplot examines the relationship between the number of minutes a recipe takes and its average rating, the following scatterplot. Although the plot doesn't show a clear linear relationship, we can see that there is a dense concentration of data points in the upper left corner of the plot, signifying that a high number of recipes with short to relatively moderate preparation times (less than 75 minutes) were rated highly. This would indicate that **the shorter the recipe time is, the higher the average rating**.
+The following scatterplot examines the relationship between the number of minutes a recipe takes and its average rating, the following scatterplot. Although the plot doesn't show a clear linear relationship, we can see that there is a dense concentration of data points in the upper left corner of the plot, signifying that a high number of recipes with short to relatively moderate preparation times (less than 100 minutes) were rated highly. This would indicate that **the shorter the recipe time is, the higher the average rating**.
 
 <iframe src="assets/fig3.html" width=800 height=600 frameBorder=0></iframe>
 
 ## Interesting aggregates
+
+By grouping the data by rating then aggregating by the mean on various columns, it is clear that certain attributes of a recipe have more variance across ratings. For example, the pivot table below shows that as ratings increase, the average number of minutes tends to decrease. This is also the case for calorie count. Conversely, the number of ingredients is roughly the same across ratings.
 
 |   rating |   minutes |   calories |   n_steps |   n_ingredients |
 |---------:|----------:|-----------:|----------:|----------------:|
@@ -65,3 +67,7 @@ The following scatterplot examines the relationship between the number of minute
 |        3 |   59.176  |    422.896 |   9.95046 |         9.17818 |
 |        4 |   53.9407 |    404.05  |   9.5479  |         9.07601 |
 |        5 |   52.106  |    412.834 |   9.93986 |         9.03409 |
+
+
+## NMAR Analysis	
+
