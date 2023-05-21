@@ -91,16 +91,29 @@ Using a significance level of 5%, we can calculate the observed test statistic a
 
 Both the p-value and the histogram results indicate that we can reject the null hypothesis at the 0.05 significance level. Thus, we can conclude that the `avg_rating` column does depend on the `n_steps` column. An everyday person may find that the more steps, the more tedious the cooking process, and thus, rate the recipe lower based on the cooking experience. 
 
-We can also test the missingness of the `avg_rating` column on presence of olive oil in a recipe. To do this, I created a separate column, `has_olive_oil`, which assigns True and False values to whether a recipe contains olive oil in its `ingredients` information. From there, we can create a conditional distribution by utilizing a pivot table that lists the proportions of recipes that contain or do not contain olive oil and do or do not have an average rating. Using this conditional distribution, we can create a grouped bar chart that displays this information visually. 
+We can also test the missingness of the `description` column on presence of olive oil in a recipe. To do this, I created two separate columns, `has_olive_oil`, which assigns True and False values to whether a recipe contains olive oil in its `ingredients` information and `desc_missing`, which assigns True and False values to whether a recipe's description is missing. From there, we can create a conditional distribution by utilizing a pivot table that lists the proportions of recipes that contain or do not contain olive oil and do or do not have a description. Using this conditional distribution, we can create a grouped bar chart that displays this information visually. 
 
 <iframe src="assets/fig5.html" width=800 height=600 frameBorder=0></iframe>
 
 We can make note of the fact that the two distributions are extremely similar, regardless of whether a recipe contains olive oil. Again, we can perform a permutation test to determine if there is any significant difference between the distributions. 
 
-For this test, the null hypothesis is: **There is no significant difference in the distribution of average rating for recipes with and without olive oil.** 
+For this test, the null hypothesis is: **There is no significant difference in the distribution of description for recipes with and without olive oil.** 
 
-Conversely, the alternative hypothesis is: **There is a significant difference in the distribution of average rating for recipes with and without olive oil.**
+Conversely, the alternative hypothesis is: **There is a significant difference in the distribution of description for recipes with and without olive oil.**
 
+The following histogram shows the distribution of the number of steps by missingness of the description. For these categorical distributions, we can use TVD as a test statistic to examine the difference.  
+
+<iframe src="assets/fig6.html" width=800 height=600 frameBorder=0></iframe>
+
+Using a significance level of 5%, we can calculate the observed test statistic and perform the permutation test 1000 times by shuffling the `desc_missing` column at random to obtain each test statistic. We fail to reject the null hypothesis, as the observed TVD is less than the 0.05 significance level. Thus, we can conclude that the `description` column does not depend on if a recipe contains olive oil. 
 
 ## Hypothesis Testing
+Let's circle back to the central question at hand: **How does the cooking time (in minutes) of a recipe relate to its average rating?** To answer this question and see if there's a relationship between the two, we can perform a permutation test. 
+
+Let the null hypothesis be: **The preparation time of a recipe does not influence the average rating of recipes.**
+
+The alternative hypothesis is: **The shorter the time it takes to prepare of a recipe, the higher the average rating of the recipe.**
+
+The test statistic I chose for this test is the signed difference in means. This is because my distributions are numeric and my alternative hypothesis is directional. I also used a significance level of 0.05. 
+
 
