@@ -102,3 +102,5 @@ For this test, the null hypothesis is: **There is no significant difference in t
 Conversely, the alternative hypothesis is: **There is a significant difference in the distribution of average rating for recipes with and without olive oil.**
 
 
+## Hypothesis Testing
+
