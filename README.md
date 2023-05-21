@@ -114,6 +114,8 @@ Let the null hypothesis be: **The preparation time of a recipe does not influenc
 
 The alternative hypothesis is: **The shorter the time it takes to prepare of a recipe, the higher the average rating of the recipe.**
 
-The test statistic I chose for this test is the signed difference in means. This is because my distributions are numeric and my alternative hypothesis is directional. I also used a significance level of 0.05. 
+The test statistic I chose for this test is the signed difference in means. This is because my distributions are numeric and my alternative hypothesis is directional. I also used a significance level of 0.05. To do this permutation test, I took the signed difference in means of the average ratings of recipes with preparation times less than 60 minutes and the average ratings of recipes with preparation times greater than 60 minutes. 60 minutes as a threshold would separate what could be deemed a relatively short to moderate time to make a recipe, and anything greater a long time. I shuffled the `minutes` column 1000 times and the following histogram displays the results of the permutation test:
 
+<iframe src="assets/fig7.html" width=800 height=600 frameBorder=0></iframe>
 
+As we can see, the p-value is 0.0, which is less than the set significance level of 0.05. As such, we say that we fail to reject the null hypothesis. We can see that there is evidence that suggests that there is a relationship between the preparation time of a recipe and its average rating, with lower recipe times tending toward higher ratings and higher recipe times tending toward lower ratings. However, it is important to note that the conclusions drawn from this analysis are based on statistical inference and cannot definitively prove the relationship.
