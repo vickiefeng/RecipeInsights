@@ -72,7 +72,7 @@ By grouping the data by rating then aggregating by the mean on various columns, 
 ## Assessment of Missingness
 
 ### NMAR Analysis	
-Three columns in the cleaned dataset contain missing values: `description`, `rating`, and `avg_rating`. I believe that the column `rating` is NMAR (Not Missing At Random). The missingness of this rating could stem from user behavior, such as a user choosing to only rate recipes that they particularly like/dislike. This would mean that the chance that a value in `rating` is missing is dependent on the value itself.
+Three columns in the cleaned dataset contain missing values: `description`, `rating`, and `avg_rating`. I believe that the column `rating` is NMAR (Not Missing At Random). This would mean that the chance that a value in `rating` is missing is dependent on the value itself, as a missing rating may be the result of a user only rating recipes that they particularly like/dislike. However, if we could gather information about user behavior or user demographics, this could possibly explain the missingness of the rating column (thereby making it MAR). 
 
 ### Missingness Dependency
 To test the missingness of the `avg_rating` column on the `n_steps` column, I performed permutation testing. First, I created a separate  column, `rating_missing`, to assign True and False values to whether a row was missing an average rating. 
